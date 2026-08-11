@@ -1,0 +1,13 @@
+# Files this project does not need to track.
+# You can usually ignore this file entirely.
+
+# macOS and Windows folder settings
+.DS_Store
+Thumbs.db
+
+# Editor and tool settings
+.vscode/
+.idea/
+
+# Vercel's local files, if you ever run its command line tool
+.vercel
