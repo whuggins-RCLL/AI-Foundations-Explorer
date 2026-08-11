@@ -1,0 +1,238 @@
+/* ---------------------------------------------------------------
+   AI Foundations Explorer - styles
+
+   This file controls how the page looks. The variables below are a
+   good place to start if you want to change the colors or fonts.
+   --------------------------------------------------------------- */
+
+:root {
+  --page-background: #f7f7f5;
+  --card-background: #ffffff;
+  --text-color: #1c1c1a;
+  --muted-text-color: #5c5c57;
+  --border-color: #e0e0da;
+  --accent-color: #8c1515; /* Stanford cardinal */
+  --accent-color-dark: #6f1010;
+  --max-width: 60rem;
+  --body-font: Georgia, "Times New Roman", serif;
+  --heading-font: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/* Reset a few browser defaults so the page starts from a clean slate. */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: var(--page-background);
+  color: var(--text-color);
+  font-family: var(--body-font);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
+
+/* The container keeps content from stretching too wide on big screens. */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--heading-font);
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
+/* --- Header ---------------------------------------------------- */
+
+.site-header {
+  background-color: var(--card-background);
+  border-bottom: 1px solid var(--border-color);
+  padding: 3rem 0 2.5rem;
+}
+
+.site-header h1 {
+  margin: 0;
+  font-size: 2.25rem;
+}
+
+.subtitle {
+  margin: 0.75rem 0 0;
+  font-size: 1.25rem;
+  color: var(--muted-text-color);
+}
+
+.note {
+  margin: 1.5rem 0 0;
+  padding-left: 1rem;
+  border-left: 3px solid var(--accent-color);
+  font-family: var(--heading-font);
+  font-size: 0.9375rem;
+  color: var(--muted-text-color);
+}
+
+/* --- Main sections --------------------------------------------- */
+
+main {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+main section + section {
+  margin-top: 3.5rem;
+}
+
+main h2 {
+  font-size: 1.5rem;
+  margin: 0 0 1.25rem;
+}
+
+/* --- Concept cards --------------------------------------------- */
+
+/* auto-fit means the cards rearrange themselves on smaller screens,
+   so we do not need a separate rule for phones. */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: 1.25rem;
+}
+
+.card {
+  background-color: var(--card-background);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 1.5rem;
+}
+
+.card h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.125rem;
+}
+
+.card p {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--muted-text-color);
+}
+
+/* --- Explore a concept ----------------------------------------- */
+
+.explorer p {
+  max-width: 40rem;
+}
+
+.button {
+  font-family: var(--heading-font);
+  font-size: 1rem;
+  color: #ffffff;
+  background-color: var(--accent-color);
+  border: none;
+  border-radius: 4px;
+  padding: 0.75rem 1.25rem;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: var(--accent-color-dark);
+}
+
+/* A visible outline when the button is reached with the Tab key. */
+.button:focus-visible {
+  outline: 3px solid var(--accent-color);
+  outline-offset: 3px;
+}
+
+.concept-output {
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  background-color: var(--card-background);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+}
+
+.concept-output h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.25rem;
+}
+
+.concept-output p {
+  margin: 0 0 1rem;
+}
+
+.concept-output .prompt-label {
+  font-family: var(--heading-font);
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted-text-color);
+  margin-bottom: 0.25rem;
+}
+
+.concept-output .prompt-text {
+  margin: 0;
+  padding-left: 1rem;
+  border-left: 3px solid var(--border-color);
+  font-style: italic;
+}
+
+.placeholder {
+  color: var(--muted-text-color);
+  font-style: italic;
+}
+
+/* --- Ideas for your fork --------------------------------------- */
+
+.ideas {
+  border-top: 1px solid var(--border-color);
+  padding-top: 2.5rem;
+}
+
+.ideas ul {
+  max-width: 40rem;
+  padding-left: 1.25rem;
+}
+
+.ideas li {
+  margin-bottom: 0.5rem;
+  color: var(--muted-text-color);
+}
+
+/* --- Footer ----------------------------------------------------- */
+
+.site-footer {
+  border-top: 1px solid var(--border-color);
+  padding: 2rem 0;
+  margin-top: 3rem;
+}
+
+.site-footer p {
+  margin: 0;
+  font-family: var(--heading-font);
+  font-size: 0.875rem;
+  color: var(--muted-text-color);
+}
+
+/* --- Small screens ----------------------------------------------- */
+
+@media (max-width: 40rem) {
+  .site-header {
+    padding: 2rem 0 1.75rem;
+  }
+
+  .site-header h1 {
+    font-size: 1.75rem;
+  }
+
+  .subtitle {
+    font-size: 1.0625rem;
+  }
+
+  main {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+}

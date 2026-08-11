@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AI Foundations Explorer</title>
+    <meta
+      name="description"
+      content="A tiny guide to some of the ideas hiding underneath generative AI."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <!-- The header introduces the site. -->
+    <header class="site-header">
+      <div class="container">
+        <h1>AI Foundations Explorer</h1>
+        <p class="subtitle">
+          A tiny guide to some of the ideas hiding underneath generative AI.
+        </p>
+        <p class="note">
+          This site is intentionally simple. In the workshop, you will use an AI
+          coding agent to change it.
+        </p>
+      </div>
+    </header>
+
+    <main class="container">
+      <!-- Section 1: the six concept cards. -->
+      <section aria-labelledby="concepts-heading">
+        <h2 id="concepts-heading">Six ideas worth knowing</h2>
+
+        <div class="card-grid">
+          <article class="card">
+            <h3>Tokens</h3>
+            <p>
+              A language model does not read text the way you do. It first
+              breaks text into smaller pieces called tokens, which can be whole
+              words, parts of words, or even punctuation. Everything the model
+              reads and writes is measured in these pieces.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Context</h3>
+            <p>
+              A model answers using whatever information is in front of it right
+              now: your instructions, the conversation so far, and any documents
+              you have shared. Information you never provided is not available
+              to it, no matter how obvious that information seems to you.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Generation</h3>
+            <p>
+              A generative model writes its answer one piece at a time by
+              predicting what is likely to come next. It is not looking up a
+              single stored answer in a database. That is why the same question
+              can produce somewhat different answers on different days.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Grounding</h3>
+            <p>
+              Grounding means giving the model specific sources to work from,
+              such as a document you upload or material a system retrieves for
+              you. The model is then asked to base its answer on that evidence
+              rather than on general recollection.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Agents</h3>
+            <p>
+              An agent combines a language model with instructions, tools, and
+              several steps in a row. Instead of producing one reply, it can
+              read files, run commands, check its own work, and keep going until
+              a task is finished.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Verification</h3>
+            <p>
+              Confident, polished writing is not evidence that the content is
+              correct. A model can produce a fluent answer that is wrong in
+              small or important ways. Claims that matter should be checked
+              against a source you trust.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- Section 2: the one interactive feature on the page. -->
+      <section class="explorer" aria-labelledby="explorer-heading">
+        <h2 id="explorer-heading">Explore a concept</h2>
+        <p>
+          Press the button to see one of the six concepts, along with a question
+          you could try asking an AI assistant.
+        </p>
+
+        <button id="concept-button" type="button" class="button">
+          Give me an AI concept
+        </button>
+
+        <!-- JavaScript fills this in. aria-live tells screen readers to
+             announce the new text when it appears. -->
+        <div id="concept-output" class="concept-output" aria-live="polite">
+          <p class="placeholder">Your concept will appear here.</p>
+        </div>
+      </section>
+
+      <!-- Section 3: prompts for students to try during the workshop. -->
+      <section class="ideas" aria-labelledby="ideas-heading">
+        <h2 id="ideas-heading">Ideas for your fork</h2>
+        <p>
+          This site is deliberately unfinished. Here are some things you could
+          ask Claude Code or Codex to do:
+        </p>
+        <ul>
+          <li>Add another AI concept to the site.</li>
+          <li>Turn this into a quiz instead of a random pick.</li>
+          <li>Add a dark mode.</li>
+          <li>Let people choose a concept instead of getting a random one.</li>
+          <li>Rewrite the explanations for a nontechnical audience.</li>
+          <li>Add a search box, or change the visual design entirely.</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>
+          A starter project for a Stanford Law School workshop on vibe coding.
+        </p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
